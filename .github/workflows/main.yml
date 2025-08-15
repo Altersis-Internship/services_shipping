@@ -68,6 +68,8 @@ jobs:
       - name: Build and Push Docker image
         uses: docker/build-push-action@v5
         with:
+          file: ./Dockerfile
+          context: .
           push: true
           tags: |
             ${{ env.DOCKER_USERNAME }}/shipping:latest
